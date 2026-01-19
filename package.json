@@ -1,0 +1,57 @@
+{
+  "name": "@outlet/sdk",
+  "version": "0.1.0",
+  "description": "Official TypeScript SDK for Outlet.sh - server-side only",
+  "author": "Outlet.sh",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build && pnpm run test:run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "outlet",
+    "sdk",
+    "email",
+    "marketing",
+    "transactional",
+    "newsletter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localrivet/outlet.git",
+    "directory": "sdk/typescript"
+  },
+  "homepage": "https://outlet.sh"
+}
